@@ -288,7 +288,7 @@ const HomePage = () => {
         </InView>
         <hr className="border-t-2 border-gray-300" />
 
-        <Footer />
+        <Footer className="" />
       </div>
     </div>
   );
