@@ -40,13 +40,15 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6 items-center">
             <a href="#home" onClick={closeMenuAndNavigate} className="text-blue-900 font-semibold text-lg">HOME</a>
             <a href="#features" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">FEATURES</a>
-            <a href="#pricing" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">PRICING</a>
+            <a href="/price" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">PRICING</a>
             <a href="#aboutus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">ABOUT US</a>
             <a href="#whyus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">WHY US</a>
             <a href="#contactus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">CONTACT US</a>
-            <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg">
+            <a href="/price">
+            <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg mt-4">
               Purchase
             </button>
+          </a>          
           </div>
 
           {/* Menu Icon for Small Screens */}
@@ -84,13 +86,15 @@ const Navbar = () => {
             <div className="flex flex-col items-center space-y-6">
               <a href="#home" onClick={closeMenuAndNavigate} className="text-blue-900 font-semibold text-lg">HOME</a>
               <a href="#features" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">FEATURES</a>
-              <a href="#pricing" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">PRICING</a>
+              <a href="/price" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">PRICING</a>
               <a href="#aboutus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">ABOUT US</a>
               <a href="#whyus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">WHY US</a>
               <a href="#contactus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">CONTACT US</a>
+              <a href="/price">
               <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg mt-4">
                 Purchase
               </button>
+            </a>            
             </div>
           </div>
         </div>
