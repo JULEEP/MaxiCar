@@ -3,7 +3,7 @@ import { InView } from 'react-intersection-observer'; // Importing Intersection 
 
 const AdmissionManagement = () => {
   return (
-    <div className="flex flex-col lg:flex-row py-16"> {/* Changed to flex-col for small screens */}
+    <div className="flex flex-col lg:flex-row py-8"> {/* Changed py-16 to py-8 for less height */}
       {/* Left Section with Image */}
       <InView
         triggerOnce={true}  // Trigger animation once when element comes into view

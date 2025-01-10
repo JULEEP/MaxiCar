@@ -3,7 +3,7 @@ import { InView } from 'react-intersection-observer'; // Import Intersection Obs
 
 const WebsiteMobileApp = () => {
   return (
-    <div className="py-16">
+    <div className="py-8">
       <div className="flex flex-col lg:flex-row">
 
         {/* Left Section with Content */}

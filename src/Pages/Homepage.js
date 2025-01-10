@@ -39,16 +39,16 @@ const HomePage = () => {
                 inView ? "animate__animated animate__fadeInLeft" : ""
               }`}
             >
-              <h1 className="text-3xl font-bold mb-4">
+              <h1 className="text-3xl font-bold mb-4 ml-4">
                 Welcome to <span className="text-purple-700">Macbell EduCare</span>
               </h1>
-              <p className="text-lg mb-3">
+              <p className="text-lg mb-3 ml-4">
                 Your ultimate solution for managing educational institutions effortlessly!
               </p>
-              <p className="text-lg mb-3">
+              <p className="text-lg mb-3 ml-4">
                 At <span className="font-bold text-purple-700">Macbell EduCare</span>, we simplify the operations of schools, coaching centers, libraries, and other educational establishments.
               </p>
-              <p className="text-lg">
+              <p className="text-lg ml-4">
                 From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
               </p>
             </div>
@@ -79,7 +79,7 @@ const HomePage = () => {
 
       {/* Rest of the Sections */}
       <div className="px-6 lg:px-8">
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
         <InView
           triggerOnce={true}
           threshold={0.5}
@@ -96,7 +96,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -114,7 +114,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -132,7 +132,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -150,7 +150,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -168,7 +168,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -186,7 +186,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -204,7 +204,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -222,7 +222,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -240,7 +240,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -258,7 +258,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <InView
           triggerOnce={true}
@@ -276,7 +276,7 @@ const HomePage = () => {
             </section>
           )}
         </InView>
-        <hr className="border-t-2 border-gray-300 my-8" />
+        <hr className="border-t-2 border-gray-300" />
 
         <Footer />
       </div>
