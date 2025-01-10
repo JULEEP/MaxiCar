@@ -13,8 +13,12 @@ import OurMission from "./OurMission";
 import Vision from "./Vision";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       {/* Static Navbar */}
@@ -22,38 +26,44 @@ const HomePage = () => {
         <Navbar />
       </div>
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="bg-white flex flex-col lg:flex-row justify-between items-center px-6 py-12 mt-24"
-      >
-        {/* Left Side Text */}
-        <InView
-          triggerOnce={true} // Trigger animation once when element comes into view
-          threshold={0.5}     // Trigger when 50% of the element is visible
-        >
-          {({ inView, ref }) => (
-            <div
-              ref={ref}
-              className={`text-gray-800 w-full max-w-lg mb-6 lg:mb-0 transform transition-transform ${
-                inView ? "animate__animated animate__fadeInLeft" : ""
-              }`}
-            >
-              <h1 className="text-3xl font-bold mb-4 ml-4">
-                Welcome to <span className="text-purple-700">Macbell EduCare</span>
-              </h1>
-              <p className="text-lg mb-3 ml-4">
-                Your ultimate solution for managing educational institutions effortlessly!
-              </p>
-              <p className="text-lg mb-3 ml-4">
-                At <span className="font-bold text-purple-700">Macbell EduCare</span>, we simplify the operations of schools, coaching centers, libraries, and other educational establishments.
-              </p>
-              <p className="text-lg ml-4">
-                From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
-              </p>
-            </div>
-          )}
-        </InView>
+       {/* Hero Section */}
+       <section
+       id="home"
+       className="bg-white flex flex-col lg:flex-row justify-between items-center px-6 py-12 mt-24"
+     >
+       {/* Left Side Text */}
+       <InView triggerOnce={true} threshold={0.5}>
+         {({ inView, ref }) => (
+           <div
+             ref={ref}
+             className={`text-gray-800 w-full max-w-lg mb-6 lg:mb-0 transform transition-transform ${
+               inView ? "animate__animated animate__fadeInLeft" : ""
+             }`}
+           >
+             <h1 className="text-3xl font-bold mb-4 ml-4">
+               Welcome to <span className="text-purple-700">Macbell EduCare</span>
+             </h1>
+             <p className="text-lg mb-3 ml-4">
+               Your ultimate solution for managing educational institutions effortlessly!
+             </p>
+             <p className="text-lg mb-3 ml-4">
+               At <span className="font-bold text-purple-700">Macbell EduCare</span>, we simplify the operations of schools, coaching centers, libraries, and other educational establishments.
+             </p>
+             <p className="text-lg ml-4">
+               From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
+             </p>
+
+             {/* Try a Demo Button */}
+             <button
+               onClick={() => navigate("/demo")} // Navigate to the DemoPage
+               className="mt-6 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
+             >
+               Try a Demo
+             </button>
+           </div>
+         )}
+       </InView>
+
 
         {/* Right Side Image */}
         <InView
