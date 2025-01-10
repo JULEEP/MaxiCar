@@ -3,7 +3,7 @@ import { InView } from 'react-intersection-observer'; // Import Intersection Obs
 
 const OurMission = () => {
   return (
-    <div className="bg-gray-50 py-8"> {/* Adjusted padding */}
+    <div className="py-8"> {/* Adjusted padding */}
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center">
 
         {/* Left Section - Image */}

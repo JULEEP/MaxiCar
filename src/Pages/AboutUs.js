@@ -4,7 +4,7 @@ import { InView } from 'react-intersection-observer'; // Importing Intersection 
 const AboutUs = () => {
   return (
     <div className='py-8'>
-      <div className="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8"> {/* Added padding for smaller screens */}
+      <div className="py-8 px-4 sm:px-6 lg:px-8"> {/* Added padding for smaller screens */}
         <div className="container mx-auto flex flex-col lg:flex-row items-center">
           {/* Left Section - Content */}
           <InView

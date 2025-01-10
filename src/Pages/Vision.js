@@ -3,7 +3,7 @@ import { InView } from 'react-intersection-observer'; // Import Intersection Obs
 
 const Vision = () => {
   return (
-    <div className="bg-gray-50 py-8"> {/* Reduced padding */}
+    <div className="py-8"> {/* Reduced padding */}
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center">
         {/* Left Section - Content */}
         <InView
@@ -36,7 +36,7 @@ const Vision = () => {
               <img
                 src="https://static.vecteezy.com/system/resources/previews/010/902/081/large_2x/business-analytics-in-cloud-arrow-leadership-company-people-challenge-teamwork-up-flat-job-marketing-concept-illustration-growth-with-rocket-investment-service-man-and-woman-trend-result-vector.jpg"
                 alt="Our Vision"
-                className="w-full sm:w-[280px] md:w-[350px] lg:w-[500px] h-auto object-cover rounded-lg" // Adjust width and height for different screens
+                className="w-full sm:w-[280px] md:w-[350px] lg:w-[500px] h-auto object-cover" // Adjust width and height for different screens
               />
             </div>
           )}

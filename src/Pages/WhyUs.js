@@ -43,7 +43,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-8">
+    <div className="py-8">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-semibold text-gray-800 mb-4">Why Schools Choose MACBELL EDUCARE?</h2>
         <p className="text-base text-gray-600 mb-8">
