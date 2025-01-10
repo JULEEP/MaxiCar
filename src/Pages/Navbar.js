@@ -30,14 +30,27 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Right Side: Menu Icon */}
+          {/* Right Side: Menu for large screens */}
+          <div className="hidden md:flex space-x-6 items-center">
+            <a href="#home" onClick={closeMenuAndNavigate} className="text-blue-900 font-semibold text-lg">HOME</a>
+            <a href="#features" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">FEATURES</a>
+            <a href="#pricing" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">PRICING</a>
+            <a href="#aboutus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">ABOUT US</a>
+            <a href="#whyus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">WHY US</a>
+            <a href="#contactus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">CONTACT US</a>
+            <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg">
+              Purchase
+            </button>
+          </div>
+
+          {/* Menu Icon for Small Screens */}
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
               className="text-blue-900 focus:outline-none"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
@@ -50,7 +63,7 @@ const Navbar = () => {
           <div className="flex justify-end p-3">
             <button onClick={toggleMenu} className="text-white text-2xl">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
