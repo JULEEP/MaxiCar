@@ -56,7 +56,7 @@ const HomePage = () => {
              {/* Try a Demo Button */}
              <button
                onClick={() => navigate("/demo")} // Navigate to the DemoPage
-               className="mt-6 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
+               className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
              >
                Try a Demo
              </button>
