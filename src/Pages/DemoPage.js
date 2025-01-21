@@ -14,28 +14,28 @@ const DemoPage = () => {
       title: "ADMIN",
       buttonLabel: "Try a Demo",
       bgColor: "bg-blue-500",
-      url: "https://school-manage-zeta.vercel.app/Admin-dashboard",
+      url: "https://school-manage-zeta.vercel.app/admin-login",
     },
     {
       icon: <AcademicCapIcon className="w-12 h-12 text-green-700" />,
       title: "STUDENT",
       buttonLabel: "Try a Demo",
       bgColor: "bg-green-500",
-      url: "https://school-manage-zeta.vercel.app/student-dashboard",
+      url: "https://school-manage-zeta.vercel.app/student-login",
     },
     {
       icon: <BriefcaseIcon className="w-12 h-12 text-yellow-700" />,
       title: "TEACHER",
       buttonLabel: "Try a Demo",
       bgColor: "bg-yellow-500",
-      url: "https://school-manage-zeta.vercel.app/teacher-dashboard",
+      url: "https://school-manage-zeta.vercel.app/teacher-login",
     },
     {
       icon: <UserGroupIcon className="w-12 h-12 text-red-700" />,
       title: "PARENT",
       buttonLabel: "Try a Demo",
       bgColor: "bg-red-500",
-      url: "https://school-manage-zeta.vercel.app/parent-dashboard",
+      url: "https://school-manage-zeta.vercel.app/parent-login",
     },
   ];
 
