@@ -15,7 +15,6 @@ import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 
-
 const HomePage = () => {
   const navigate = useNavigate();
 
@@ -26,44 +25,43 @@ const HomePage = () => {
         <Navbar />
       </div>
 
-       {/* Hero Section */}
-       <section
-       id="home"
-       className="bg-white flex flex-col lg:flex-row justify-between items-center px-6 py-12 mt-24"
-     >
-       {/* Left Side Text */}
-       <InView triggerOnce={true} threshold={0.5}>
-         {({ inView, ref }) => (
-           <div
-             ref={ref}
-             className={`text-gray-800 w-full max-w-lg mb-6 lg:mb-0 transform transition-transform ${
-               inView ? "animate__animated animate__fadeInLeft" : ""
-             }`}
-           >
-             <h1 className="text-3xl font-bold mb-4 ml-4">
-               Welcome to <span className="text-purple-700">Macbell EduCare</span>
-             </h1>
-             <p className="text-lg mb-3 ml-4">
-               Your ultimate solution for managing educational institutions effortlessly!
-             </p>
-             <p className="text-lg mb-3 ml-4">
-               At <span className="font-bold text-purple-700">Macbell EduCare</span>, we simplify the operations of schools, coaching centers, libraries, and other educational establishments.
-             </p>
-             <p className="text-lg ml-4">
-               From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
-             </p>
+      {/* Hero Section */}
+      <section
+        id="home"
+        className="bg-white flex flex-col lg:flex-row justify-between items-center px-6 py-12 mt-24"
+      >
+        {/* Left Side Text */}
+        <InView triggerOnce={true} threshold={0.5}>
+          {({ inView, ref }) => (
+            <div
+              ref={ref}
+              className={`text-gray-800 w-full max-w-lg mb-6 lg:mb-0 transform transition-transform ${
+                inView ? "animate__animated animate__fadeInLeft" : ""
+              }`}
+            >
+              <h1 className="text-3xl font-bold mb-4 ml-4">
+                Welcome to <span className="text-purple-700">Macbell EduCare</span>
+              </h1>
+              <p className="text-lg mb-3 ml-4">
+                Your ultimate solution for managing educational institutions effortlessly!
+              </p>
+              <p className="text-lg mb-3 ml-4">
+                At <span className="font-bold text-purple-700">Macbell EduCare</span>, we simplify the operations of schools, coaching centers, libraries, and other educational establishments.
+              </p>
+              <p className="text-lg ml-4">
+                From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
+              </p>
 
-             {/* Try a Demo Button */}
-             <button
-               onClick={() => navigate("/demo")} // Navigate to the DemoPage
-               className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
-             >
-               Try a Demo
-             </button>
-           </div>
-         )}
-       </InView>
-
+              {/* Try a Demo Button */}
+              <button
+                onClick={() => navigate("/demo")} // Navigate to the DemoPage
+                className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
+              >
+                Try a Demo
+              </button>
+            </div>
+          )}
+        </InView>
 
         {/* Right Side Image */}
         <InView
@@ -90,204 +88,37 @@ const HomePage = () => {
       {/* Rest of the Sections */}
       <div className="px-6 lg:px-8">
         <hr className="border-t-2 border-gray-300" />
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="features"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <KeyFeatures />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
 
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="whyus"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <WhyUs />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
+        {/* Sections with Intersection Observer */}
+        {[
+          { id: "features", component: <KeyFeatures /> },
+          { id: "whyus", component: <WhyUs /> },
+          { id: "schoolerp", component: <SchoolERP /> },
+          { id: "admission", component: <AdmissionManagement /> },
+          { id: "learning", component: <LearningManagement /> },
+          { id: "examination", component: <ExaminationSoftware /> },
+          { id: "webapp", component: <WebsiteMobileApp /> },
+          { id: "aboutus", component: <AboutUs /> },
+          { id: "ourmission", component: <OurMission /> },
+          { id: "vision", component: <Vision /> },
+          { id: "contactus", component: <ContactUs /> },
+        ].map(({ id, component }) => (
+          <InView triggerOnce={true} threshold={0.5} key={id}>
+            {({ inView, ref }) => (
+              <section
+                id={id}
+                ref={ref}
+                className={`transform transition-transform ${
+                  inView ? "animate__animated animate__fadeInUp" : ""
+                }`}
+              >
+                {component}
+              </section>
+            )}
+          </InView>
+        ))}
 
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="schoolerp"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <SchoolERP />
-            </section>
-          )}
-        </InView>
         <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="admission"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <AdmissionManagement />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="learning"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <LearningManagement />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="examination"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <ExaminationSoftware />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="webapp"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <WebsiteMobileApp />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="aboutus"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <AboutUs />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="ourmission"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <OurMission />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="vision"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <Vision />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
-        <InView
-          triggerOnce={true}
-          threshold={0.5}
-        >
-          {({ inView, ref }) => (
-            <section
-              id="contactus"
-              ref={ref}
-              className={`transform transition-transform ${
-                inView ? "animate__animated animate__fadeInUp" : ""
-              }`}
-            >
-              <ContactUs />
-            </section>
-          )}
-        </InView>
-        <hr className="border-t-2 border-gray-300" />
-
         <Footer className="" />
       </div>
     </div>
