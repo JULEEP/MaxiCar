@@ -131,7 +131,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/macbell-educare/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
               <FaLinkedin size={20} />
             </a>
-            <a href="https://wa.me/qr/P6PN4QJUSW3AN1" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500">
+            <a href="https://wa.me/919424977848?text=Hi,%20I%20have%20an%20inquiry%20regarding%20your%20services." target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500">
               <FaWhatsapp size={20} />
             </a>
 
