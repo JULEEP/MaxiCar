@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"; // Importing icons
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa"; // Importing icons
 import { InView } from 'react-intersection-observer'; // Import Intersection Observer
 
 const Footer = () => {
@@ -83,9 +83,9 @@ const Footer = () => {
                   <li className="text-white">Ayodhya bypass road</li>
                   <li className="text-white">Bhopal</li>
                   <li><p className="text-gray-400">Sales:</p></li>
-                  <li className="text-white">+91 911 189 7177</li>
+                  <li className="text-white">+91 942 497 7848</li>
                   <li><p className="text-gray-400">Support:</p></li>
-                  <li className="text-white">+91 911 189 7177</li>
+                  <li className="text-white">+91 942 497 7848</li>
                   <li><p className="text-gray-400">Email:</p></li>
                   <li className="text-blue">info@macbell.in</li>
                 </ul>
@@ -101,11 +101,13 @@ const Footer = () => {
               <div ref={ref} className={`${inView ? 'animate__animated animate__fadeIn' : ''}`}>
                 <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
                 <ul className="text-sm space-y-2">
-                <li><a href="https://www.facebook.com/macbelleducare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">Facebook</a></li>
-                <li><a href="https://twitter.com/EducareMacbell" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">Twitter</a></li>
-                <li><a href="https://www.instagram.com/macbell_educare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/company/macbell-educare/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">LinkedIn</a></li>
-                
+                  <li><a href="https://www.facebook.com/macbelleducare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">Facebook</a></li>
+                  <li><a href="https://twitter.com/EducareMacbell" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">Twitter</a></li>
+                  <li><a href="https://www.instagram.com/macbell_educare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">Instagram</a></li>
+                  <li><a href="https://www.linkedin.com/company/macbell-educare/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">LinkedIn</a></li>
+                  <li><a href="https://wa.me/qr/P6PN4QJUSW3AN1" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">WhatsApp</a></li>
+
+
                 </ul>
               </div>
             )}
@@ -116,19 +118,22 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-6 mt-6 flex justify-between items-center">
           <p className="text-sm text-center sm:text-left">© MACBELL EDUCARE All Rights Reserved, 2025.</p>
           <div className="flex space-x-4 ml-2">
-          {/* Social Media Icons */}
-<a href="https://www.facebook.com/macbelleducare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
-<FaFacebook size={20} />
-</a>
-<a href="https://twitter.com/EducareMacbell" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
-<FaTwitter size={20} />
-</a>
-<a href="https://www.instagram.com/macbell_educare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
-<FaInstagram size={20} />
-</a>
-<a href="https://www.linkedin.com/company/macbell-educare/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
-<FaLinkedin size={20} />
-</a>
+            {/* Social Media Icons */}
+            <a href="https://www.facebook.com/macbelleducare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
+              <FaFacebook size={20} />
+            </a>
+            <a href="https://twitter.com/EducareMacbell" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
+              <FaTwitter size={20} />
+            </a>
+            <a href="https://www.instagram.com/macbell_educare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
+              <FaInstagram size={20} />
+            </a>
+            <a href="https://www.linkedin.com/company/macbell-educare/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
+              <FaLinkedin size={20} />
+            </a>
+            <a href="https://wa.me/qr/P6PN4QJUSW3AN1" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500">
+              <FaWhatsapp size={20} />
+            </a>
 
           </div>
         </div>
