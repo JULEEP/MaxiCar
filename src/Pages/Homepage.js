@@ -52,13 +52,24 @@ const HomePage = () => {
                 From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
               </p>
 
-              {/* Try a Demo Button */}
-              <button
-                onClick={() => navigate("/demo")} // Navigate to the DemoPage
-                className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
-              >
-                Try a Demo
-              </button>
+{/* Try a Demo Button */}
+<button
+  onClick={() => navigate("/demo")} // Navigate to the DemoPage
+  className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
+>
+  Try a Demo
+</button>
+
+{/* Inquiry Me Button */}
+<a
+  href="https://wa.me/919424977848?text=Hi,%20I%20have%20an%20inquiry%20regarding%20your%20services."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 transition-colors duration-300"
+>
+  Inquiry Me
+</a>
+
             </div>
           )}
         </InView>
