@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { BiCheck } from "react-icons/bi"; // Import check icon
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi"; // Import chevron icons for navigation
+import { BiChevronLeft, BiChevronRight, BiX } from "react-icons/bi"; // Import chevron icons for navigation
 
 const PricingCart = () => {
   const [expandedSections, setExpandedSections] = useState({});
   const [currentCard, setCurrentCard] = useState(0); // Track current card index
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    message: "",
+  });
 
   const toggleSection = (index) => {
     setExpandedSections((prev) => ({
@@ -12,6 +19,27 @@ const PricingCart = () => {
       [index]: !prev[index],
     }));
   };
+
+  const handleChoosePlan = (planName) => {
+    setSelectedPlan(planName);
+    setShowPopup(true);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, phone, message } = formData;
+    const whatsappURL = `https://wa.me/919424977848?text=${encodeURIComponent(
+      `Inquiry for ${selectedPlan}\n\nName: ${name}\nPhone: ${phone}\nMessage: ${message}`
+    )}`;
+    window.open(whatsappURL, "_blank");
+    setShowPopup(false);
+  };
+
 
   const features1 = [
     { title: "1. Multi-Panel Login", items: ["Admin", "Students", "Parents", "Teachers"] },
@@ -193,7 +221,7 @@ const PricingCart = () => {
               <span className="text-blue-900">90.00</span>{" "}
               <span className="text-sm text-gray-600">/ Month / Student</span>
             </div>
-            <div className="mt-4 py-2 px-4 border-2 text-center border-purple-600 text-blue-600 rounded-md cursor-pointer hover:bg-purple-600 hover:text-white transition duration-300">
+            <div onClick={() => handleChoosePlan("Basic Plan")} className="mt-4 py-2 px-4 border-2 text-center border-purple-600 text-blue-600 rounded-md cursor-pointer hover:bg-purple-600 hover:text-white transition duration-300">
               Choose Plan
             </div>
           </div>
@@ -257,7 +285,7 @@ const PricingCart = () => {
               <span className="text-blue-900">175.00</span>{" "}
               <span className="text-sm text-gray-600">/ Month / Student</span>
             </div>
-            <div className="mt-4 py-2 px-4 border-2 text-center border-purple-600 text-blue-600 rounded-md cursor-pointer hover:bg-purple-600 hover:text-white transition duration-300">
+            <div onClick={() => handleChoosePlan("Advance Plan")} className="mt-4 py-2 px-4 border-2 text-center border-purple-600 text-blue-600 rounded-md cursor-pointer hover:bg-purple-600 hover:text-white transition duration-300">
               Choose Plan
             </div>
           </div>
@@ -314,6 +342,25 @@ const PricingCart = () => {
           </button>
         </div>
       </div>
+       {/* Popup Form */}
+       {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-xl w-80">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold">Inquiry for {selectedPlan}</h3>
+              <button onClick={() => setShowPopup(false)} className="text-red-600">
+                <BiX size={24} />
+              </button>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <input type="text" name="name" placeholder="Your Name" className="w-full p-2 border rounded" onChange={handleChange} required />
+              <input type="tel" name="phone" placeholder="Phone Number" className="w-full p-2 border rounded" onChange={handleChange} required />
+              <textarea name="message" placeholder="Message" className="w-full p-2 border rounded" rows="3" onChange={handleChange}></textarea>
+              <button type="submit" className="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-800">Send Inquiry</button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
