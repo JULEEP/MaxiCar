@@ -1,8 +1,9 @@
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import DemoPage from "./Pages/DemoPage";
-import HomePage from './Pages/Homepage'
+import HomePage from './Pages/Homepage';
 import PricingCart from "./Pages/Pricing";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermCondition from "./Pages/TermCondition";
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/demo" element={<DemoPage />} />
         <Route path="/price" element={<PricingCart />} />
         <Route path="/term" element={<TermCondition />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
 
 
       </Routes>
