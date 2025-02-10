@@ -1,13 +1,15 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa"; // Importing icons
 import { InView } from 'react-intersection-observer'; // Import Intersection Observer
+import { NavLink } from "react-router-dom";
+
 
 const Footer = () => {
   const logo = 'https://res.cloudinary.com/dokfnv3vy/image/upload/v1736084543/custom/yhbii0wbedftmpvlpnon.jpg';
 
   return (
-    <footer className="bg-gray-800 text-white py-16">
-      <div className="container mx-auto px-6">
+    <footer className="bg-gray-800 text-white py-16 w-full">
+      <div className="container mx-auto px-6 w-full">
         {/* Logo and Description */}
         <InView
           triggerOnce={true}  // Trigger animation once when element comes into view
@@ -36,14 +38,8 @@ const Footer = () => {
                 <h3 className="text-xl font-semibold mb-4">Explore MACBELL EDUCARE</h3>
                 <ul className="text-sm space-y-2">
                   <li><a href="/" className="hover:text-blue-500">Home</a></li>
-                  <li><a className="hover:text-blue-500">Our Story</a></li>
-                  <li><a className="hover:text-blue-500">CEO Desk</a></li>
-                  <li><a className="hover:text-blue-500">Latest Media & Press</a></li>
-                  <li><a className="hover:text-blue-500">Privacy Policy</a></li>
-                  <li><a className="hover:text-blue-500">Refund Policy</a></li>
-                  <li><a className="hover:text-blue-500">Terms of Use</a></li>
-                  <li><a className="hover:text-blue-500">Terms of Service</a></li>
-                  <li><a className="hover:text-blue-500">Sitemap</a></li>
+                  <li><NavLink to="/private-policy" className="hover:text-blue-500">Privecy Policy</NavLink></li>
+                  <li><NavLink to="/term&condition" className="hover:text-blue-500">Terms & Conditions</NavLink></li>
                 </ul>
               </div>
             )}
@@ -55,14 +51,12 @@ const Footer = () => {
           >
             {({ inView, ref }) => (
               <div ref={ref} className={`${inView ? 'animate__animated animate__fadeIn' : ''}`}>
-                <h3 className="text-xl font-semibold mb-4">Our Products</h3>
+                <h3 className="text-xl font-semibold mb-4">Our Services</h3>
                 <ul className="text-sm space-y-2">
                   <li><a className="hover:text-blue-500">Admission</a></li>
                   <li><a className="hover:text-blue-500">Transport</a></li>
-                  <li><a className="hover:text-blue-500">Website & Email</a></li>
                   <li><a className="hover:text-blue-500">Examination</a></li>
                   <li><a className="hover:text-blue-500">Fee Collection</a></li>
-                  <li><a className="hover:text-blue-500">HR Management</a></li>
                   <li><a className="hover:text-blue-500">Parent Communication</a></li>
                   <li><a className="hover:text-blue-500">Learning Management System</a></li>
                   <li><a className="hover:text-blue-500">All-in-One</a></li>

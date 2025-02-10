@@ -15,8 +15,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/demo" element={<DemoPage />} />
         <Route path="/price" element={<PricingCart />} />
-        <Route path="/term" element={<TermCondition />} />
-        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/term&condition" element={<TermCondition />} />
+        <Route path="/private-policy" element={<PrivacyPolicy />} />
 
 
       </Routes>
