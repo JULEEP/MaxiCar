@@ -53,13 +53,14 @@ const Footer = () => {
               <div ref={ref} className={`${inView ? 'animate__animated animate__fadeIn' : ''}`}>
                 <h3 className="text-xl font-semibold mb-4">Our Services</h3>
                 <ul className="text-sm space-y-2">
-                  <li><a className="hover:text-blue-500">Admission</a></li>
-                  <li><a className="hover:text-blue-500">Transport</a></li>
-                  <li><a className="hover:text-blue-500">Examination</a></li>
-                  <li><a className="hover:text-blue-500">Fee Collection</a></li>
-                  <li><a className="hover:text-blue-500">Parent Communication</a></li>
-                  <li><a className="hover:text-blue-500">Learning Management System</a></li>
-                  <li><a className="hover:text-blue-500">All-in-One</a></li>
+                  <li><a href="https://school-manage-zeta.vercel.app/admin-login" className="hover:text-blue-500">Admission</a></li>
+                  <li><a href="https://school-manage-zeta.vercel.app/admin-login" className="hover:text-blue-500">Transport</a></li>
+                  <li><a href="https://school-manage-zeta.vercel.app/admin-login" className="hover:text-blue-500">Examination</a></li>
+                  <li><a href="https://school-manage-zeta.vercel.app/admin-login" className="hover:text-blue-500">Fee Collection</a></li>
+                  <li><a href="https://school-manage-zeta.vercel.app/admin-login" className="hover:text-blue-500">Parent Communication</a></li>
+                  <li><a href="https://school-manage-zeta.vercel.app/admin-login" className="hover:text-blue-500">Learning Management System</a></li>
+                  <li><a href="https://school-manage-zeta.vercel.app/admin-login" className="hover:text-blue-500">All-in-One</a></li>
+
                 </ul>
               </div>
             )}

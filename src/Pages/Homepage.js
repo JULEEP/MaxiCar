@@ -14,9 +14,29 @@ import Vision from "./Vision";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import image12 from "../images/image12.png";
+import image2 from "../images/image2.png";
+import image6 from "../images/image6.png";
+import image8 from "../images/image8.png";
+import image9 from "../images/image9.png";
+import image10 from "../images/image10.png";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const images = [image12, image2, image6, image8, image9, image10];
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
 
   return (
     <div>
@@ -25,7 +45,7 @@ const HomePage = () => {
         <Navbar />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section with Slider */}
       <section
         id="home"
         className="bg-white flex flex-col lg:flex-row justify-between items-center px-6 py-12 mt-24"
@@ -52,33 +72,29 @@ const HomePage = () => {
                 From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
               </p>
 
-{/* Try a Demo Button */}
-<button
-  onClick={() => navigate("/demo")} // Navigate to the DemoPage
-  className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
->
-  Try a Demo
-</button>
+              {/* Try a Demo Button */}
+              <button
+                onClick={() => navigate("/demo")} // Navigate to the DemoPage
+                className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
+              >
+                Try a Demo
+              </button>
 
-{/* Inquiry Me Button */}
-<a
-  href="https://wa.me/919424977848?text=Hi,%20I%20have%20an%20inquiry%20regarding%20your%20services."
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 transition-colors duration-300"
->
-  Inquiry Me
-</a>
-
+              {/* Inquiry Me Button */}
+              <a
+                href="https://wa.me/919424977848?text=Hi,%20I%20have%20an%20inquiry%20regarding%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 transition-colors duration-300"
+              >
+                Inquiry Me
+              </a>
             </div>
           )}
         </InView>
 
-        {/* Right Side Image */}
-        <InView
-          triggerOnce={true} // Trigger animation once when element comes into view
-          threshold={0.5}     // Trigger when 50% of the element is visible
-        >
+        {/* Right Side Image Slider */}
+        <InView triggerOnce={true} threshold={0.5}>
           {({ inView, ref }) => (
             <div
               ref={ref}
@@ -86,11 +102,13 @@ const HomePage = () => {
                 inView ? "animate__animated animate__fadeInRight" : ""
               }`}
             >
-              <img
-                src="https://th.bing.com/th/id/OIP.SNyXkVPKPHcQyIPZltTnJgHaEK?rs=1&pid=ImgDetMain"
-                alt="Dashboard"
-                className="w-full h-auto object-contain rounded-lg"
-              />
+              <Slider {...settings} className="w-full">
+                {images.map((image, index) => (
+                  <div key={index}>
+                    <img src={image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain rounded-lg" />
+                  </div>
+                ))}
+              </Slider>
             </div>
           )}
         </InView>
@@ -130,7 +148,7 @@ const HomePage = () => {
         ))}
 
         <hr className="border-t-2 border-gray-300" />
-        <Footer className="" />
+        <Footer />
       </div>
     </div>
   );

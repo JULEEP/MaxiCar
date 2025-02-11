@@ -1,16 +1,30 @@
 import React from 'react';
 import { InView } from 'react-intersection-observer'; // Import Intersection Observer
+import image1 from '../images/image1.png';
+import image3 from '../images/image3.png';
+import image4 from '../images/image4.png';
+import image5 from '../images/image5.png';
+import Slider from 'react-slick'; // Import Slider Library
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const WebsiteMobileApp = () => {
+  const images = [image1, image3, image4, image5];
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <div className="py-8">
       <div className="flex flex-col lg:flex-row">
-
         {/* Left Section with Content */}
-        <InView
-          triggerOnce={true}  // Trigger animation once when element comes into view
-          threshold={0.5}      // Trigger when 50% of the element is visible
-        >
+        <InView triggerOnce={true} threshold={0.5}>
           {({ inView, ref }) => (
             <div
               ref={ref}
@@ -31,25 +45,27 @@ const WebsiteMobileApp = () => {
           )}
         </InView>
 
-        {/* Right Section with Image */}
-        <InView
-          triggerOnce={true}  // Trigger animation once when element comes into view
-          threshold={0.5}      // Trigger when 50% of the element is visible
-        >
+        {/* Right Section with Image Slider */}
+        <InView triggerOnce={true} threshold={0.5}>
           {({ inView, ref }) => (
             <div
               ref={ref}
               className={`w-full lg:w-1/2 p-4 flex justify-center transform transition-transform ${inView ? 'animate__animated animate__fadeInRight' : ''}`}
             >
-              <img
-                src="https://schoolcanvas.com/assets/img/app.png"
-                alt="Website and Mobile App"
-                className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] h-auto object-cover rounded-lg"
-              />
+              <Slider {...settings} className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px]">
+                {images.map((image, index) => (
+                  <div key={index} className="bg-white p-2 rounded-lg flex justify-center">
+                    <img
+                      src={image}
+                      alt={`Slide ${index + 1}`}
+                      className="w-auto h-full object-contain rounded-lg"
+                    />
+                  </div>
+                ))}
+              </Slider>
             </div>
           )}
         </InView>
-
       </div>
     </div>
   );

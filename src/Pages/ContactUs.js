@@ -79,7 +79,7 @@ const ContactUs = () => {
                   <PhoneIcon className="w-6 h-6 text-blue-500 mb-2" />
                   <p className="text-lg text-gray-700">Call Us:</p>
                   <p className="text-lg text-gray-700 font-semibold">
-                    123 456 7890
+                  +91 942 497 7848
                   </p>
                 </div>
                 <div className="flex flex-col items-start">
@@ -88,7 +88,7 @@ const ContactUs = () => {
                   <p className="text-lg text-gray-700">
                     Our support will help you from 9am to 5pm
                   </p>
-                  <p className="text-lg text-gray-700">info@gmail.com</p>
+                  <p className="text-lg text-gray-700">info@macbell.in</p>
                 </div>
               </div>
             </div>
