@@ -1,96 +1,135 @@
-import React from "react";
-import { InView } from "react-intersection-observer"; // Import Intersection Observer
-import {
-  UserIcon,
-  AcademicCapIcon,
-  BriefcaseIcon,
-  UserGroupIcon,
-} from "@heroicons/react/outline"; // Heroicons
+import React, { useState } from "react";
+import axios from "axios";
 
 const DemoPage = () => {
-  const cards = [
-    {
-      icon: <UserIcon className="w-12 h-12 text-blue-700" />,
-      title: "ADMIN",
-      buttonLabel: "Try a Demo",
-      bgColor: "bg-blue-500",
-      url: "https://school-manage-zeta.vercel.app/admin-login",
-    },
-    {
-      icon: <AcademicCapIcon className="w-12 h-12 text-green-700" />,
-      title: "STUDENT",
-      buttonLabel: "Try a Demo",
-      bgColor: "bg-green-500",
-      url: "https://school-manage-zeta.vercel.app/student-login",
-    },
-    {
-      icon: <BriefcaseIcon className="w-12 h-12 text-yellow-700" />,
-      title: "TEACHER",
-      buttonLabel: "Try a Demo",
-      bgColor: "bg-yellow-500",
-      url: "https://school-manage-zeta.vercel.app/teacher-login",
-    },
-    {
-      icon: <UserGroupIcon className="w-12 h-12 text-red-700" />,
-      title: "PARENT",
-      buttonLabel: "Try a Demo",
-      bgColor: "bg-red-500",
-      url: "https://school-manage-zeta.vercel.app/parent-login",
-    },
-  ];
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    address: "",
+    demoFor: "", // Default selected option
+    demoDate: "",
+    demoTime: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [popup, setPopup] = useState({ show: false, message: "", type: "" });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await axios.post("https://school-backend-1-2xki.onrender.com/api/admin/create-demo", formData);
+      showPopup(response.data.message, "success");
+      setFormData({ fullName: "", email: "", phone: "", address: "", demoFor: "For School", demoDate: "", demoTime: "" });
+    } catch (error) {
+      showPopup(error.response?.data?.message || "Something went wrong!", "error");
+    }
+    setLoading(false);
+  };
+
+  const showPopup = (message, type) => {
+    setPopup({ show: true, message, type });
+    setTimeout(() => {
+      setPopup({ show: false, message: "", type: "" });
+    }, 3000); // Hide popup after 3 seconds
+  };
 
   return (
-    <div
-      className="relative bg-gray-50 min-h-screen py-16"
-      style={{
-        backgroundImage: `url('https://www.teahub.io/photos/full/13-137242_new-animated-desktop-wallpapers-animated-background-cute-animated.jpg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Transparent Overlay */}
-      <div className="absolute inset-0 bg-gray-900 bg-opacity-40"></div>
+    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mt-10 relative">
+      <h2 className="text-2xl font-semibold text-center text-purple-900 mb-4">Request For a Demo</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="fullName"
+          placeholder="Full Name"
+          value={formData.fullName}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+        />
+        <input
+          type="text"
+          name="phone"
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+        />
+        <input
+          type="text"
+          name="address"
+          placeholder="Address"
+          value={formData.address}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+        />
+        
+        <select
+        name="demoFor"
+        value={formData.demoFor}
+        onChange={handleChange}
+        required
+        className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+      >
+        <option value="" disabled>
+          Demo For
+        </option>
+        <option value="For School">For School</option>
+        <option value="For Coaching">For Coaching</option>
+        <option value="For Library">For Library</option>
+      </select>
+      
+        <input
+          type="date"
+          name="demoDate"
+          value={formData.demoDate}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+        />
+        <input
+          type="time"
+          name="demoTime"
+          value={formData.demoTime}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+        />
+        <button
+          type="submit"
+          className="w-full bg-purple-600 text-white p-2 rounded-lg hover:bg-purple-600 transition"
+          disabled={loading}
+        >
+          {loading ? "Submitting..." : "Request Demo"}
+        </button>
+      </form>
 
-      {/* Content */}
-      <div className="relative container mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-white mb-6">Demo for Key Users</h2>
-        <p className="text-lg text-gray-200 mb-12">
-          Explore the tailored features for each user type to understand how our platform works.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {cards.map((card, index) => (
-            <InView
-              key={index}
-              triggerOnce={true} // Trigger animation once when element comes into view
-              threshold={0.5} // Trigger when 50% of the element is visible
-            >
-              {({ inView, ref }) => (
-                <div
-                  ref={ref}
-                  className={`rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform hover:-translate-y-2 ${card.bgColor} ${
-                    inView ? "animate__animated animate__fadeInUp" : ""
-                  }`}
-                  onClick={() => (window.location.href = card.url)} // Redirect on card click
-                  style={{ cursor: "pointer" }}
-                >
-                  <div className="p-4 bg-white rounded-full shadow-md mb-4">{card.icon}</div>
-                  <h3 className="text-xl font-semibold text-white">{card.title}</h3>
-                  <button
-                    className="mt-4 px-4 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold rounded shadow hover:opacity-90"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent card click redirection
-                      window.location.href = card.url;
-                    }}
-                  >
-                    {card.buttonLabel}
-                  </button>
-                </div>
-              )}
-            </InView>
-          ))}
+      {/* Custom Popup */}
+      {popup.show && (
+        <div
+          className={`fixed top-5 right-5 px-4 py-2 rounded-lg text-white shadow-lg ${
+            popup.type === "success" ? "bg-green-500" : "bg-red-500"
+          }`}
+        >
+          {popup.message}
         </div>
-      </div>
+      )}
     </div>
   );
 };

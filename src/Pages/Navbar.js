@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import logo from '../images/admin.jpeg'
-
-//const logo = 'https://res.cloudinary.com/dokfnv3vy/image/upload/v1736084543/custom/yhbii0wbedftmpvlpnon.jpg';
+import logo from '../images/admin.jpeg';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,11 +43,13 @@ const Navbar = () => {
             <a href="#aboutus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">ABOUT US</a>
             <a href="#whyus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">WHY US</a>
             <a href="#contactus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">CONTACT US</a>
+
+            {/* Purchase Button */}
             <a href="/price">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg mt-4">
-              Purchase
-            </button>
-          </a>          
+              <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg mt-4">
+                Purchase
+              </button>
+            </a>
           </div>
 
           {/* Menu Icon for Small Screens */}
@@ -92,10 +92,10 @@ const Navbar = () => {
               <a href="#whyus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">WHY US</a>
               <a href="#contactus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">CONTACT US</a>
               <a href="/price">
-              <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg mt-4">
-                Purchase
-              </button>
-            </a>            
+                <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg mt-4">
+                  Purchase
+                </button>
+              </a>
             </div>
           </div>
         </div>
