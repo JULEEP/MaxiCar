@@ -43,6 +43,8 @@ const Navbar = () => {
             <a href="#aboutus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">ABOUT US</a>
             <a href="#whyus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">WHY US</a>
             <a href="#contactus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">CONTACT US</a>
+            <a href="/" onClick={closeMenuAndNavigate} className="text-blue-900 font-semibold text-lg">HOME</a>
+
 
             {/* Purchase Button */}
             <a href="/price">
@@ -91,6 +93,7 @@ const Navbar = () => {
               <a href="#aboutus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">ABOUT US</a>
               <a href="#whyus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">WHY US</a>
               <a href="#contactus" onClick={closeMenuAndNavigate} className="text-blue-800 font-semibold text-lg">CONTACT US</a>
+              <a href="/" onClick={closeMenuAndNavigate} className="text-blue-900 font-semibold text-lg">HOME</a>
               <a href="/price">
                 <button className="bg-gradient-to-r from-blue-500 to-purple-700 text-white py-2 px-6 rounded-lg mt-4">
                   Purchase
