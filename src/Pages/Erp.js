@@ -45,7 +45,7 @@ const SchoolERP = () => {
         </p>
 
         {/* Client Testimonials Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 ml-12 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 ml-16 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-center">
           {/* Loop over clients and generate each client card */}
           {clients.map((client, index) => (
             <InView
