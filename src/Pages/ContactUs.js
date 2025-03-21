@@ -5,8 +5,6 @@ import axios from "axios"; // Import Axios for API calls
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    schoolName: "",
-    studentsCount: "",
     contactPersonName: "",
     contactPersonDesignation: "",
     contactPersonEmail: "",
@@ -40,8 +38,6 @@ const ContactUs = () => {
       );
       setSuccessMessage("Form submitted successfully!");
       setFormData({
-        schoolName: "",
-        studentsCount: "",
         contactPersonName: "",
         contactPersonDesignation: "",
         contactPersonEmail: "",
@@ -66,9 +62,7 @@ const ContactUs = () => {
           {({ inView, ref }) => (
             <div
               ref={ref}
-              className={`w-full lg:w-2/5 text-left mb-8 lg:mb-0 ${
-                inView ? "animate__animated animate__fadeInLeft" : ""
-              }`}
+              className={`w-full lg:w-2/5 text-left mb-8 lg:mb-0 ${inView ? "animate__animated animate__fadeInLeft" : ""}`}
             >
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
                 Quick Support
@@ -78,17 +72,13 @@ const ContactUs = () => {
                 <div className="flex flex-col items-start">
                   <PhoneIcon className="w-6 h-6 text-blue-500 mb-2" />
                   <p className="text-lg text-gray-700">Call Us:</p>
-                  <p className="text-lg text-gray-700 font-semibold">
-                  +91 942 497 7848
-                  </p>
+                  <p className="text-lg text-gray-700 font-semibold">+91 942 497 7890</p>
                 </div>
                 <div className="flex flex-col items-start">
                   <ChatIcon className="w-6 h-6 text-blue-500 mb-2" />
                   <p className="text-lg text-gray-700">Chat Us</p>
-                  <p className="text-lg text-gray-700">
-                    Our support will help you from 9am to 5pm
-                  </p>
-                  <p className="text-lg text-gray-700">info@macbell.in</p>
+                  <p className="text-lg text-gray-700">Our support will help you from 9am to 5pm</p>
+                  <p className="text-lg text-gray-700">info@.in</p>
                 </div>
               </div>
             </div>
@@ -100,42 +90,12 @@ const ContactUs = () => {
           {({ inView, ref }) => (
             <div
               ref={ref}
-              className={`w-full lg:w-3/5 shadow-lg p-6 bg-white rounded-lg mt-6 lg:mt-0 ${
-                inView ? "animate__animated animate__fadeInRight" : ""
-              }`}
+              className={`w-full lg:w-3/5 shadow-lg p-6 bg-white rounded-lg mt-6 lg:mt-0 ${inView ? "animate__animated animate__fadeInRight" : ""}`}
             >
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Fill out the form and we will be in touch as soon as possible.
               </h2>
               <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="mb-4">
-                    <label className="block text-gray-700 font-semibold">
-                      School's Name
-                    </label>
-                    <input
-                      type="text"
-                      name="schoolName"
-                      value={formData.schoolName}
-                      onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded-lg"
-                      required
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-gray-700 font-semibold">
-                      Students Count
-                    </label>
-                    <input
-                      type="number"
-                      name="studentsCount"
-                      value={formData.studentsCount}
-                      onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded-lg"
-                      required
-                    />
-                  </div>
-                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="mb-4">
                     <label className="block text-gray-700 font-semibold">
@@ -194,7 +154,7 @@ const ContactUs = () => {
                 </div>
                 <div className="mb-4">
                   <label className="block text-gray-700 font-semibold">
-                    Full address of the school
+                    Full Address
                   </label>
                   <textarea
                     name="fullAddress"

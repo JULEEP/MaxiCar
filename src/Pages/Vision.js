@@ -15,10 +15,19 @@ const Vision = () => {
               ref={ref}
               className={`lg:w-1/2 text-left lg:text-left mb-4 lg:mb-0 transform transition-transform ${inView ? 'animate__animated animate__fadeInLeft' : ''}`}
             >
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">Our Vision</h2> {/* Reduced font size and margin */}
-              <p className="text-lg text-gray-600 mb-2"> {/* Reduced margin */}
-                To empower educational institutions worldwide with tools that enhance efficiency, communication, and learning outcomes.
+              <h2 className="text-3xl font-bold text-gray-800 mb-2">How Can We Help?</h2> {/* Title */}
+              <p className="text-lg text-gray-600 mb-4">
+                Get a Ride Quote Here
               </p>
+              <p className="text-base text-gray-600 mb-6">
+                Our customer service team is available around the clock, 7 days a week. Speak with one of our team members to get comprehensive guidance tailored to your specific requirements.
+              </p>
+              <a 
+                href="/contact"  // Update this link to your contact page
+                className="inline-block bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600 transition"
+              >
+                Contact Us
+              </a>
             </div>
           )}
         </InView>
@@ -34,9 +43,9 @@ const Vision = () => {
               className={`lg:w-1/2 flex justify-center transform transition-transform ${inView ? 'animate__animated animate__fadeInRight' : ''}`}
             >
               <img
-                src="https://static.vecteezy.com/system/resources/previews/010/902/081/large_2x/business-analytics-in-cloud-arrow-leadership-company-people-challenge-teamwork-up-flat-job-marketing-concept-illustration-growth-with-rocket-investment-service-man-and-woman-trend-result-vector.jpg"
-                alt="Our Vision"
-                className="w-full sm:w-[280px] md:w-[350px] lg:w-[500px] h-auto object-cover" // Adjust width and height for different screens
+                src="https://static.vecteezy.com/system/resources/previews/023/399/688/large_2x/can-i-help-you-text-button-can-i-help-you-sign-icon-label-sticker-web-buttons-vector.jpg"
+                alt="How Can We Help"
+                className="w-full sm:w-[280px] md:w-[350px] lg:w-[500px] h-auto object-cover rounded-lg"
               />
             </div>
           )}

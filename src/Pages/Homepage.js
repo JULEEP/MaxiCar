@@ -4,12 +4,7 @@ import Navbar from "./Navbar";
 import KeyFeatures from "./KeyFeatures";
 import WhyUs from "./WhyUs";
 import SchoolERP from "./Erp";
-import AdmissionManagement from "./AdmissionManagement";
-import LearningManagement from "./LearningManagement";
-import ExaminationSoftware from "./ExaminationSoftware";
-import WebsiteMobileApp from "./Website&Mobile";
 import AboutUs from "./AboutUs";
-import OurMission from "./OurMission";
 import Vision from "./Vision";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
@@ -17,17 +12,17 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate for naviga
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image12 from "../images/image12.png";
-import image2 from "../images/image2.png";
-import image6 from "../images/image6.png";
-import image8 from "../images/image8.png";
-import image9 from "../images/image9.png";
-import image10 from "../images/image10.png";
+import LatestNews from "./LatestNews";
 
+// Direct links to the images
+const fleetImage1 = "https://13maxicabs.com/wp-content/uploads/2024/07/13-Maxi-Fleets-600x380-02-1-2.png";
+const fleetImage2 = "https://13maxicabs.com/wp-content/uploads/2024/07/13-Maxi-Fleets-600x380-03-1.png";
+const fleetImage3 = "https://13maxicabs.com/wp-content/uploads/2024/07/13-Maxi-Fleets-600x380-01-2.png";
+const fleetImage4 = "https://13maxicabs.com/wp-content/uploads/2024/07/13-Maxi-Fleets-600x380-04-1.png";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const images = [image12, image2, image6, image8, image9, image10];
+  const images = [fleetImage1, fleetImage2, fleetImage3, fleetImage4]; // Using the direct image links
   const settings = {
     dots: false,
     infinite: true,
@@ -48,47 +43,46 @@ const HomePage = () => {
       {/* Hero Section with Slider */}
       <section
         id="home"
-        className="bg-white flex flex-col lg:flex-row justify-between items-center px-6 py-12 mt-24"
+        className="bg-cover bg-center flex flex-col lg:flex-row justify-between items-center px-6 py-12 mt-16"
+        style={{
+          backgroundImage:
+            "url('https://www.simplus.com/wp-content/uploads/2022/08/Featured-image-14.jpg')",
+        }}
       >
         {/* Left Side Text */}
         <InView triggerOnce={true} threshold={0.5}>
           {({ inView, ref }) => (
             <div
               ref={ref}
-              className={`text-gray-800 w-full max-w-lg mb-6 lg:mb-0 transform transition-transform ${
+              className={`text-white w-full max-w-lg mb-6 lg:mb-0 transform transition-transform ${
                 inView ? "animate__animated animate__fadeInLeft" : ""
               }`}
             >
               <h1 className="text-3xl font-bold mb-4 ml-4">
-                Welcome to <span className="text-purple-700">Macbell EduCare</span>
+                Book a Maxi Cab Service in Sydney with 13 Maxi Cabs
               </h1>
               <p className="text-lg mb-3 ml-4">
-                Your ultimate solution for managing educational institutions effortlessly!
+                YOUR RELIABLE AND TRUSTED MAXI or TAXI SERVICE FOR REGULAR TRANSFERS like Sydney Airport to your hotel or anywhere in Sydney CBD, Australia.
               </p>
               <p className="text-lg mb-3 ml-4">
-                At <span className="font-bold text-purple-700">Macbell EduCare</span>, we simplify the operations of schools, coaching centers, libraries, and other educational establishments.
-              </p>
-              <p className="text-lg ml-4">
-                From handling student data and exams to managing attendance, fees, and communication, our solution empowers educators and administrators.
+                We have multiple fleet options of Maxis Cabs for Group Transfer, Sedan taxi for Corporate transfer, Wheelchair accessible Taxi Maxi for disabled persons, Taxi with Maxi Taxi Baby Seats, and all the needs of transportation services we cover.
               </p>
 
-              {/* Try a Demo Button */}
-              <button
-                onClick={() => navigate("/demo")} // Navigate to the DemoPage
-                className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
-              >
-                Try a Demo
-              </button>
-
-              {/* Inquiry Me Button */}
-              <a
-                href="https://wa.me/919424977848?text=Hi,%20I%20have%20an%20inquiry%20regarding%20your%20services."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 ml-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 transition-colors duration-300"
-              >
-                Inquiry Me
-              </a>
+              {/* Book Now and Call Now Buttons */}
+              <div className="mt-6 ml-4">
+                <button
+                  onClick={() => navigate("/book")} // Navigate to the Booking Page
+                  className="mr-4 px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
+                >
+                  Book Now
+                </button>
+                <a
+                  href="tel:+61212345678" // Replace with the actual number for calling
+                  className="px-6 py-3 text-white font-semibold rounded-full shadow-lg bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 transition-colors duration-300"
+                >
+                  Call Now
+                </a>
+              </div>
             </div>
           )}
         </InView>
@@ -105,7 +99,11 @@ const HomePage = () => {
               <Slider {...settings} className="w-full">
                 {images.map((image, index) => (
                   <div key={index}>
-                    <img src={image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain rounded-lg" />
+                    <img
+                      src={image}
+                      alt={`Slide ${index + 1}`}
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
                   </div>
                 ))}
               </Slider>
@@ -115,20 +113,16 @@ const HomePage = () => {
       </section>
 
       {/* Rest of the Sections */}
-      <div className="px-6 lg:px-8">
+      <div className="">
         <hr className="border-t-2 border-gray-300" />
 
         {/* Sections with Intersection Observer */}
-        {[
+        {[ 
           { id: "features", component: <KeyFeatures /> },
           { id: "whyus", component: <WhyUs /> },
           { id: "schoolerp", component: <SchoolERP /> },
-          { id: "admission", component: <AdmissionManagement /> },
-          { id: "learning", component: <LearningManagement /> },
-          { id: "examination", component: <ExaminationSoftware /> },
-          { id: "webapp", component: <WebsiteMobileApp /> },
           { id: "aboutus", component: <AboutUs /> },
-          { id: "ourmission", component: <OurMission /> },
+          { id: "letestnews", component: <LatestNews /> },
           { id: "vision", component: <Vision /> },
           { id: "contactus", component: <ContactUs /> },
         ].map(({ id, component }) => (
