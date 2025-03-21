@@ -8,7 +8,7 @@ const AboutUs = () => {
   const [showMore, setShowMore] = useState(false);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
